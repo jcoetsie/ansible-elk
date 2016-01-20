@@ -6,7 +6,7 @@
   apt: name=ntp state=absent purge=yes
   when: ansible_os_family == 'Debian'
   sudo: yes
-  
+
 - name: Install common apt packages
   apt: pkg={{ item }} state=latest update_cache=true
   with_items: elk_common_packages
